@@ -1,8 +1,14 @@
 const display = document.getElementById("display")
-
+const goal =  display.value.length-1
 function appendToDisplay(input)
 {
- display.value +=input;
+    if(display.value.length === 10 )
+    {
+        alert("max length is 10")
+    }
+    else {
+            display.value +=input;
+    }
 }
 
 function clearScreen()
@@ -17,4 +23,9 @@ function calculate()
     catch (error){
         display.value= "error"
     }
+}
+
+function deleteItem()
+{
+   display.value = display.value.replace(display.value[display.value.length-1],'')
 }
